@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title>GTA:SA</title>
+    </head>
+    <body>
+        <div class="left">Main Menu</div>
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Grand_Theft_Auto_San_Andreas_logo.svg">
+        </div>
+        <div class="loader-wrapper">
+            <span class="loader"><span class="loader-inner"></span></span>
+            <div id="total" class="outer">
+                <div id="progress" class="inner"></div>
+            </div>
+          </div>
+          <div id="page" hidden>
+            <div class="nav">
+                <audio id="beep" preload="auto"><source src="hoversound.mp3"></source></audio>
+                <div class="center" id="startGame"><a onclick="">Start Game</a></div>
+                <div class="center secondary"><a href="">Options</a></div>
+                <div class="center third"><a href="">Quit Game</a></div>
+            </div>
+        </div>
+    </body>
+</html>
+<script>
+// hover sound
+let beepOne = $("#beep")[0];
+$(".nav")
+.mouseenter(function () {
+    beepOne.play();
+});
+// page loading
+$(window).on("load",function(){
+      $(".loader-wrapper").delay(4000).fadeOut(2000);
+      $("#page").delay(4300).fadeIn();
+});
+// progress bar page loading
+let totalelem = document.getElementById("total");
+let progresselem = document.getElementById("progress");
+let interval = setInterval(function(){
+    if(progresselem.clientWidth>=totalelem.clientWidth)
+    {
+        clearInterval(interval);
+        return;
+    }
+    progresselem.style.width = progresselem.offsetWidth+1+"px";
+},10);
+</script>
