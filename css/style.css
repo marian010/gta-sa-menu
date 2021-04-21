@@ -47,7 +47,7 @@ a:hover {
     position: absolute;
     top: 0;
     left: 0;
-    background-image: url("loading.jpg");
+    background-image: url("/images/loading.jpg");
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -69,10 +69,10 @@ a:hover {
     font-family: 'Diploma Regular';
     font-style: normal;
     font-weight: normal;
-    src: local('Diploma Regular'), url('Diploma.woff') format('woff');
+    src: local('Diploma Regular'), url('/fonts/Diploma.woff') format('woff');
     }
 @font-face {
     font-family: 'BankGothicRegular';
     src: url('./BankGothicRegular.eot');
-    src: local('BankGothicRegular'), url('./BankGothicRegular.woff') format('woff'), url('./BankGothicRegular.ttf') format('truetype');
+    src: local('BankGothicRegular'), url('/fonts/BankGothicRegular.woff') format('woff'), url('./BankGothicRegular.ttf') format('truetype');
 }
